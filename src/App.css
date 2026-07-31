@@ -1,0 +1,129 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+}
+
+h1 {
+  margin-bottom: 24px;
+  color: black;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(9, 60px);
+  grid-template-rows: repeat(10, 60px);
+
+  width: 540px;
+  height: 600px;
+
+  position: relative;
+}
+
+.river {
+  position: absolute;
+
+  font-family: sans-serif;
+  font-size: 24px;
+
+  left: 0;
+  right: 0;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  display: flex;
+  justify-content: space-between;
+
+  padding: 0 90px;
+
+  pointer-events: none;
+}
+
+.point {
+  width: 60px;
+  height: 60px;
+  position: relative;
+
+  box-sizing: border-box;
+}
+
+/* Horizontal lines*/
+.point::before {
+  content: "";
+
+  position: absolute;
+
+  width: 60px;
+  height: 1px;
+
+  background: black;
+
+  top: 50%;
+  left: 0;
+}
+
+/* Vertical lines */
+.point::after {
+  content: "";
+
+  position: absolute;
+
+  width: 1px;
+  height: 60px;
+
+  background: black;
+
+  top: 0;
+  left: 50%;
+}
+
+/* Right edge */
+.point:nth-child(9n)::before {
+  width: 30px;
+}
+
+/* Left edge */
+.point:nth-child(9n + 1)::before {
+  left: 30px;
+  width: 30px;
+}
+
+/* Bottom edge */
+.point:nth-child(n + 82)::after {
+  height: 30px;
+}
+
+/* Top edge */
+.point:nth-child(-n + 9)::after {
+  top: 30px;
+  height: 30px;
+}
+
+/* Top river */
+.point:nth-child(n + 38):nth-child(-n + 44)::after {
+  height: 30px;
+}
+
+/* Bottom river */
+.point:nth-child(n + 47):nth-child(-n + 53)::after {
+  top: 30px;
+  height: 30px;
+}
+
+/*.point::after {
+  content: "";
+  position: absolute;
+
+  width: 8px;
+  height: 8px;
+
+  background: black;
+  border-radius: 50%;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+}*/
