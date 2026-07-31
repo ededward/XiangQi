@@ -178,36 +178,46 @@ h1 {
 
 
 .top-left {
-  top: 10px;
-  left: 10px;
+  top: 15px;
+  left: 15px;
 
-  border-top: 2px solid black;
-  border-left: 2px solid black;
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
 }
 
 
 .top-right {
-  top: 10px;
-  right: 10px;
-
-  border-top: 2px solid black;
-  border-right: 2px solid black;
-}
-
-
-.bottom-left {
-  bottom: 10px;
-  left: 10px;
+  top: 15px;
+  right: 15px;
 
   border-bottom: 2px solid black;
   border-left: 2px solid black;
 }
 
 
-.bottom-right {
-  bottom: 10px;
-  right: 10px;
+.bottom-left {
+  bottom: 15px;
+  left: 15px;
 
-  border-bottom: 2px solid black;
+  border-top: 2px solid black;
   border-right: 2px solid black;
+}
+
+
+.bottom-right {
+  bottom: 15px;
+  right: 15px;
+
+  border-top: 2px solid black;
+  border-left: 2px solid black;
+}
+
+.corner-mark.left .top-left,
+.corner-mark.left .bottom-left {
+  display: none;
+}
+
+.corner-mark.right .top-right,
+.corner-mark.right .bottom-right {
+  display: none;
 }
