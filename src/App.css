@@ -112,18 +112,102 @@ h1 {
   height: 30px;
 }
 
-/*.point::after {
-  content: "";
+.palace {
   position: absolute;
 
-  width: 8px;
-  height: 8px;
+  width: 180px;
+  height: 180px;
+
+  left: 180px;
+}
+
+.top-palace {
+  top: 0;
+}
+
+.bottom-palace {
+  bottom: 0;
+}
+
+.diagonal {
+  position: absolute;
+
+  width: 1px;
+  height: 170px; /* 170px = diagonal distance across 2 board spaces (120×120) */
 
   background: black;
-  border-radius: 50%;
 
-  top: 50%;
-  left: 50%;
+  left: 90px;
+  top: 6px;
 
-  transform: translate(-50%, -50%);
-}*/
+  transform-origin: center;
+}
+
+.diagonal-1 {
+  transform: rotate(45deg);
+}
+
+.diagonal-2 {
+  transform: rotate(-45deg);
+}
+
+.diagonal-3 {
+  transform: rotate(45deg);
+}
+
+.diagonal-4 {
+  transform: rotate(-45deg);
+}
+
+.corner-mark {
+  position: absolute;
+
+  width: 60px;
+  height: 60px;
+
+  top: 0;
+  left: 0;
+}
+
+.corner {
+  position: absolute;
+
+  width: 10px;
+  height: 10px;
+}
+
+
+.top-left {
+  top: 10px;
+  left: 10px;
+
+  border-top: 2px solid black;
+  border-left: 2px solid black;
+}
+
+
+.top-right {
+  top: 10px;
+  right: 10px;
+
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+}
+
+
+.bottom-left {
+  bottom: 10px;
+  left: 10px;
+
+  border-bottom: 2px solid black;
+  border-left: 2px solid black;
+}
+
+
+.bottom-right {
+  bottom: 10px;
+  right: 10px;
+
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
+}
