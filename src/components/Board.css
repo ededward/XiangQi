@@ -1,0 +1,207 @@
+.board {
+  display: grid;
+  grid-template-columns: repeat(9, 60px);
+  grid-template-rows: repeat(10, 60px);
+
+  width: 540px;
+  height: 600px;
+
+  position: relative;
+}
+
+.river {
+  position: absolute;
+
+  font-family: sans-serif;
+  font-size: 24px;
+
+  left: 0;
+  right: 0;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  display: flex;
+  justify-content: space-between;
+
+  padding: 0 90px;
+
+  pointer-events: none;
+}
+
+.point {
+  width: 60px;
+  height: 60px;
+  position: relative;
+
+  box-sizing: border-box;
+}
+
+/* Horizontal lines*/
+.point::before {
+  content: "";
+
+  position: absolute;
+
+  width: 60px;
+  height: 1px;
+
+  background: black;
+
+  top: 50%;
+  left: 0;
+}
+
+/* Vertical lines */
+.point::after {
+  content: "";
+
+  position: absolute;
+
+  width: 1px;
+  height: 60px;
+
+  background: black;
+
+  top: 0;
+  left: 50%;
+}
+
+/* Right edge */
+.point:nth-child(9n)::before {
+  width: 30px;
+}
+
+/* Left edge */
+.point:nth-child(9n + 1)::before {
+  left: 30px;
+  width: 30px;
+}
+
+/* Bottom edge */
+.point:nth-child(n + 82)::after {
+  height: 30px;
+}
+
+/* Top edge */
+.point:nth-child(-n + 9)::after {
+  top: 30px;
+  height: 30px;
+}
+
+/* Top river */
+.point:nth-child(n + 38):nth-child(-n + 44)::after {
+  height: 30px;
+}
+
+/* Bottom river */
+.point:nth-child(n + 47):nth-child(-n + 53)::after {
+  top: 30px;
+  height: 30px;
+}
+
+.palace {
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  left: 180px;
+}
+
+.top-palace {
+  top: 0;
+}
+
+.bottom-palace {
+  bottom: 0;
+}
+
+.diagonal {
+  position: absolute;
+
+  width: 1px;
+  height: 170px; /* 170px = diagonal distance across 2 board spaces (120×120) */
+
+  background: black;
+
+  left: 90px;
+  top: 6px;
+
+  transform-origin: center;
+}
+
+.diagonal-1 {
+  transform: rotate(45deg);
+}
+
+.diagonal-2 {
+  transform: rotate(-45deg);
+}
+
+.diagonal-3 {
+  transform: rotate(45deg);
+}
+
+.diagonal-4 {
+  transform: rotate(-45deg);
+}
+
+.corner-mark {
+  position: absolute;
+
+  width: 60px;
+  height: 60px;
+
+  top: 0;
+  left: 0;
+}
+
+.corner {
+  position: absolute;
+
+  width: 10px;
+  height: 10px;
+}
+
+.top-left {
+  top: 15px;
+  left: 15px;
+
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
+}
+
+.top-right {
+  top: 15px;
+  right: 15px;
+
+  border-bottom: 2px solid black;
+  border-left: 2px solid black;
+}
+
+.bottom-left {
+  bottom: 15px;
+  left: 15px;
+
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+}
+
+.bottom-right {
+  bottom: 15px;
+  right: 15px;
+
+  border-top: 2px solid black;
+  border-left: 2px solid black;
+}
+
+.corner-mark.left .top-left,
+.corner-mark.left .bottom-left {
+  display: none;
+}
+
+.corner-mark.right .top-right,
+.corner-mark.right .bottom-right {
+  display: none;
+}

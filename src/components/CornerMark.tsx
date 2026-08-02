@@ -1,4 +1,8 @@
-function CornerMark({ side = "full" }) {
+type CornerMarkProps = {
+  side?: "full" | "left" | "right";
+};
+
+function CornerMark({ side = "full" }: CornerMarkProps) {
   return (
     <div className={`corner-mark ${side}`}>
       <div className="corner top-left" />

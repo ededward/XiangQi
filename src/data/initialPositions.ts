@@ -1,0 +1,38 @@
+import type {Piece} from "../types/Piece";
+
+export const initialPieces: Piece[] = [
+  // Black pieces
+  { type: "soldier", side: "black", position: 28 },
+  { type: "soldier", side: "black", position: 30 },
+  { type: "soldier", side: "black", position: 32 },
+  { type: "soldier", side: "black", position: 34 },
+  { type: "soldier", side: "black", position: 36 },
+  { type: "cannon", side: "black", position: 20 },
+  { type: "cannon", side: "black", position: 26 },
+  { type: "chariot", side: "black", position: 1 },
+  { type: "chariot", side: "black", position: 9 },
+  { type: "horse", side: "black", position: 2 },
+  { type: "horse", side: "black", position: 8 },
+  { type: "elephant", side: "black", position: 3 },
+  { type: "elephant", side: "black", position: 7 },
+  { type: "advisor", side: "black", position: 4 },
+  { type: "advisor", side: "black", position: 6 },
+  { type: "general", side: "black", position: 5 },
+  // Red pieces
+  { type: "soldier", side: "red", position: 55 },
+  { type: "soldier", side: "red", position: 57 },
+  { type: "soldier", side: "red", position: 59 },
+  { type: "soldier", side: "red", position: 61 },
+  { type: "soldier", side: "red", position: 63 },
+  { type: "cannon", side: "red", position: 65 },
+  { type: "cannon", side: "red", position: 71 },
+  { type: "chariot", side: "red", position: 82 },
+  { type: "chariot", side: "red", position: 90 },
+  { type: "horse", side: "red", position: 83 },
+  { type: "horse", side: "red", position: 89 },
+  { type: "elephant", side: "red", position: 84 },
+  { type: "elephant", side: "red", position: 88 },
+  { type: "advisor", side: "red", position: 85 },
+  { type: "advisor", side: "red", position: 87 },
+  { type: "general", side: "red", position: 86 },
+]
