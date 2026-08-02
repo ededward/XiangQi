@@ -1,6 +1,8 @@
 import "./Board.css";
 import CornerMark from "./CornerMark";
 import Point from "./Point";
+import Piece from "./Piece";
+import { initialPieces } from "../data/initialPositions";
 import {
   fullMarkPositions,
   leftMarkPositions,
@@ -15,9 +17,14 @@ function Board() {
     <div className="board">
       {Array.from({ length: rows * cols }).map((_, index) => {
         const position = index + 1;
+        const piece = initialPieces.find(
+            piece => piece.position === position
+        );
 
         return (
           <Point key={index}>
+            {piece && <Piece piece={piece} />}
+
             {fullMarkPositions.includes(position) && (
               <CornerMark />
             )}

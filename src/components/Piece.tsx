@@ -1,4 +1,6 @@
+import "./Piece.css";
 import type {Piece as PieceType} from "../types/Piece";
+import {pieceSymbols} from "../data/pieceSymbols";
 
 type PieceProps = {
   piece: PieceType;
@@ -7,7 +9,7 @@ type PieceProps = {
 function Piece({ piece }: PieceProps) {
   return (
     <div className={`piece ${piece.side}`}>
-      {piece.type}
+      {pieceSymbols[piece.side][piece.type]}
     </div>
   )
 }

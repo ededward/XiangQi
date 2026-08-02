@@ -6,6 +6,8 @@
   width: 540px;
   height: 600px;
 
+  background-color: #c4d096;
+
   position: relative;
 }
 
@@ -13,7 +15,8 @@
   position: absolute;
 
   font-family: sans-serif;
-  font-size: 24px;
+  font-size: 32px;
+  font-weight: bold;
 
   left: 0;
   right: 0;
@@ -204,4 +207,24 @@
 .corner-mark.right .top-right,
 .corner-mark.right .bottom-right {
   display: none;
+}
+
+.piece {
+  position: absolute;
+
+  width: 46px;
+  height: 46px;
+
+  border-radius: 50%;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 10;
 }
