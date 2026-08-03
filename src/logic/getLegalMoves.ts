@@ -4,6 +4,7 @@ import { getHorseMoves } from "./movements/horse";
 import { getElephantMoves } from "./movements/elephant";
 import { getAdvisorMoves } from "./movements/advisor";
 import { getGeneralMoves } from "./movements/general";
+import { getSoldierMoves } from "./movements/soldier";
 
 export function getLegalMoves(piece: Piece, pieces: Piece[]): number[] {
   switch (piece.type) {
@@ -21,6 +22,9 @@ export function getLegalMoves(piece: Piece, pieces: Piece[]): number[] {
 
     case "general":
       return getGeneralMoves(piece, pieces);
+          
+    case "soldier":
+      return getSoldierMoves(piece, pieces);
 
     default:
       return [];

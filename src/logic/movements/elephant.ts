@@ -1,6 +1,7 @@
 import type { Piece } from "../../types/Piece";
 import { positionToRowCol, rowColToPosition } from "../../utils/board";
-import { ROWS, COLS, BLACK_RIVER_ROW, RED_RIVER_ROW } from "../../data/boardConstants";
+import { ROWS, COLS } from "../../data/boardConstants";
+import { isAcrossRiver } from "../rules/river";
 
 export function getElephantMoves(piece: Piece, pieces: Piece[]): number[] {
   const moves: number[] = [];
@@ -35,11 +36,7 @@ export function getElephantMoves(piece: Piece, pieces: Piece[]): number[] {
       continue;
     }
 
-    if (piece.side === "black" && newRow > BLACK_RIVER_ROW) {
-      continue;
-    }
-
-    if (piece.side === "red" && newRow < RED_RIVER_ROW) {
+    if (isAcrossRiver(piece.side, newRow)) {
       continue;
     }
     
