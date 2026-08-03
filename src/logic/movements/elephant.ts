@@ -1,13 +1,10 @@
 import type { Piece } from "../../types/Piece";
 import { positionToRowCol, rowColToPosition } from "../../utils/board";
-import { ROWS, COLS, BLACK_RIVER_ROW, RED_RIVER_ROW } from "../../constants/board";
+import { ROWS, COLS, BLACK_RIVER_ROW, RED_RIVER_ROW } from "../../data/boardConstants";
 
 export function getElephantMoves(piece: Piece, pieces: Piece[]): number[] {
   const moves: number[] = [];
   const { row, col } = positionToRowCol(piece.position);
-
-  // directions:
-  // up, down, left, right
   const destinations = 
   [
     {

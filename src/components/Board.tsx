@@ -8,7 +8,7 @@ import {
   rightMarkPositions
 } from "../data/boardDecorations";
 import type { Piece as PieceType } from "../types/Piece";
-import { ROWS, COLS } from "../constants/board";
+import { ROWS, COLS } from "../data/boardConstants";
 
 type BoardProps = {
   pieces: PieceType[];

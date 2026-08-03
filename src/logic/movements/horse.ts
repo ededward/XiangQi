@@ -1,13 +1,10 @@
 import type { Piece } from "../../types/Piece";
 import { positionToRowCol, rowColToPosition } from "../../utils/board";
-import { ROWS, COLS } from "../../constants/board";
+import { ROWS, COLS } from "../../data/boardConstants";
 
 export function getHorseMoves(piece: Piece, pieces: Piece[]): number[] {
   const moves: number[] = [];
   const { row, col } = positionToRowCol(piece.position);
-
-  // directions:
-  // up, down, left, right
   const destinations = 
   [
     {
