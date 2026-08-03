@@ -1,10 +1,11 @@
 type PointProps = {
   children?: React.ReactNode;
+  onClick?: () => void;
 };
 
-function Point({ children }: PointProps) {
+function Point({ children, onClick }: PointProps) {
   return (
-    <div className="point">
+    <div className="point" onClick={onClick}>
       {children}
     </div>
   );

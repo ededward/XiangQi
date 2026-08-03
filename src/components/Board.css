@@ -110,6 +110,8 @@
   height: 180px;
 
   left: 180px;
+
+  pointer-events: none;
 }
 
 .top-palace {
@@ -132,6 +134,8 @@
   top: 6px;
 
   transform-origin: center;
+
+  pointer-events: none;
 }
 
 .diagonal-1 {

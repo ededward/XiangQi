@@ -2,28 +2,41 @@ import "./Board.css";
 import CornerMark from "./CornerMark";
 import Point from "./Point";
 import Piece from "./Piece";
-import { initialPieces } from "../data/initialPositions";
 import {
   fullMarkPositions,
   leftMarkPositions,
   rightMarkPositions
 } from "../data/boardDecorations";
+import type { Piece as PieceType } from "../types/Piece";
+import { ROWS, COLS } from "../constants/board";
 
-function Board() {
-  const rows = 10;
-  const cols = 9;
+type BoardProps = {
+  pieces: PieceType[];
+  selectedPiece: PieceType | null;
+  onPieceSelect: (piece: PieceType) => void;
+  onPointClick: (position: number) => void;
+};
 
+function Board({ pieces, selectedPiece, onPieceSelect, onPointClick }: BoardProps) {
   return (
     <div className="board">
-      {Array.from({ length: rows * cols }).map((_, index) => {
+      {Array.from({ length: ROWS * COLS }).map((_, index) => {
         const position = index + 1;
-        const piece = initialPieces.find(
+        const piece = pieces.find(
             piece => piece.position === position
         );
 
         return (
-          <Point key={index}>
-            {piece && <Piece piece={piece} />}
+          <Point 
+            key={index}
+            onClick={() => onPointClick(position)}
+          >
+            {piece && 
+            <Piece 
+              piece={piece}
+              selected={selectedPiece?.position === piece.position}
+              onSelect={() => onPieceSelect(piece)}
+            />}
 
             {fullMarkPositions.includes(position) && (
               <CornerMark />
