@@ -1,6 +1,7 @@
 import type { Piece } from "../../types/Piece";
 import { positionToRowCol, rowColToPosition } from "../../utils/board";
-import { ROWS, COLS, BLACK_PALACE, RED_PALACE } from "../../data/boardConstants";
+import { ROWS, COLS } from "../../data/boardConstants";
+import { isInPalace } from "../rules/palace";
 
 // Todo: adding flying general moves later
 export function getGeneralMoves(piece: Piece, pieces: Piece[]): number[] {
@@ -24,11 +25,7 @@ export function getGeneralMoves(piece: Piece, pieces: Piece[]): number[] {
 
     const newPosition = rowColToPosition(newRow, newCol);
 
-    if (piece.side === "black" && !BLACK_PALACE.includes(newPosition)) {
-      continue;
-    }
-
-    if (piece.side === "red" && !RED_PALACE.includes(newPosition)) {
+    if (!isInPalace(piece.side, newPosition)) {
       continue;
     }
     
