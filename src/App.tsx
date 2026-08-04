@@ -4,20 +4,11 @@ import Board from "./components/Board";
 import { initialPieces } from "./data/initialPositions";
 import type { Piece } from "./types/Piece";
 import { getLegalMoves } from "./logic/getLegalMoves";
-import { getCannonMoves} from "./logic/movements/cannon";
 
 function App() {
   const [pieces, setPieces] = useState(initialPieces);
   const [selectedPiece, setSelectedPiece] = useState<Piece | null>(null);
   const legalMoves = selectedPiece ? getLegalMoves(selectedPiece, pieces) : [];
-
-  //testing moves
-  console.log(
-    getCannonMoves(
-      initialPieces[5],
-      initialPieces
-    )
-  );
 
   function handlePointClick(position:number) {
     if (!selectedPiece) return;
@@ -44,6 +35,7 @@ function App() {
         selectedPiece={selectedPiece}
         onPieceSelect={handlePieceClick}
         onPointClick={handlePointClick}
+        legalMoves={legalMoves}
       />
     </div>
   );

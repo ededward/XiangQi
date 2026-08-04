@@ -15,9 +15,10 @@ type BoardProps = {
   selectedPiece: PieceType | null;
   onPieceSelect: (piece: PieceType) => void;
   onPointClick: (position: number) => void;
+  legalMoves?: number[];
 };
 
-function Board({ pieces, selectedPiece, onPieceSelect, onPointClick }: BoardProps) {
+function Board({ pieces, selectedPiece, onPieceSelect, onPointClick, legalMoves }: BoardProps) {
   return (
     <div className="board">
       {Array.from({ length: ROWS * COLS }).map((_, index) => {
@@ -25,11 +26,13 @@ function Board({ pieces, selectedPiece, onPieceSelect, onPointClick }: BoardProp
         const piece = pieces.find(
             piece => piece.position === position
         );
+        const isLegalMove = legalMoves?.includes(position);
 
         return (
           <Point 
             key={index}
             onClick={() => onPointClick(position)}
+            isLegalMove={isLegalMove}
           >
             {piece && 
             <Piece 

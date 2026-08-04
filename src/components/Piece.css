@@ -1,28 +1,37 @@
 .piece {
-    width: 46px;
-    height: 46px;
+  position: absolute;
 
-    border-radius: 50%;
+  width: 46px;
+  height: 46px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  border-radius: 50%;
 
-    border: 2px solid #444;
-    background-color: #f5deb3;
+  left: 50%;
+  top: 50%;
 
-    font-size: 28px;
-    font-weight: bold;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 2px solid #444;
+  background-color: #f5deb3;
+
+  font-size: 28px;
+  font-weight: bold;
+
+  z-index: 10;
 }
 
 .piece.red {
-    color: #b22222;
+  color: #b22222;
 }
 
 .piece.black {
-    color: black;
+  color: black;
 }
 
 .piece.selected {
-    outline: 3px solid orange;
+  outline: 3px solid orange;
 }

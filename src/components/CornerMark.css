@@ -1,0 +1,58 @@
+.corner-mark {
+  position: absolute;
+
+  width: 60px;
+  height: 60px;
+
+  top: 0;
+  left: 0;
+}
+
+.corner {
+  position: absolute;
+
+  width: 10px;
+  height: 10px;
+}
+
+.top-left {
+  top: 15px;
+  left: 15px;
+
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
+}
+
+.top-right {
+  top: 15px;
+  right: 15px;
+
+  border-bottom: 2px solid black;
+  border-left: 2px solid black;
+}
+
+.bottom-left {
+  bottom: 15px;
+  left: 15px;
+
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+}
+
+.bottom-right {
+  bottom: 15px;
+  right: 15px;
+
+  border-top: 2px solid black;
+  border-left: 2px solid black;
+}
+
+.corner-mark.left .top-left,
+.corner-mark.left .bottom-left {
+  display: none;
+}
+
+.corner-mark.right .top-right,
+.corner-mark.right .bottom-right {
+  display: none;
+}

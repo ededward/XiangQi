@@ -1,3 +1,5 @@
+import "./CornerMark.css";
+
 type CornerMarkProps = {
   side?: "full" | "left" | "right";
 };
