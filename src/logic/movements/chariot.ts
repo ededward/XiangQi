@@ -6,8 +6,6 @@ export function getChariotMoves(piece: Piece, pieces: Piece[]): number[] {
   const moves: number[] = [];
   const { row, col } = positionToRowCol(piece.position);
 
-  // directions:
-  // up, down, left, right
   const directions = [
     [-1, 0],
     [1, 0],

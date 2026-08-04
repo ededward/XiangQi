@@ -4,20 +4,20 @@ import Board from "./components/Board";
 import { initialPieces } from "./data/initialPositions";
 import type { Piece } from "./types/Piece";
 import { getLegalMoves } from "./logic/getLegalMoves";
-//import { getSoldierMoves} from "./logic/movements/soldier";
+import { getCannonMoves} from "./logic/movements/cannon";
 
 function App() {
   const [pieces, setPieces] = useState(initialPieces);
   const [selectedPiece, setSelectedPiece] = useState<Piece | null>(null);
   const legalMoves = selectedPiece ? getLegalMoves(selectedPiece, pieces) : [];
 
-  //testing soldier moves
-  /*console.log(
-    getSoldierMoves(
-      initialPieces[16],
+  //testing moves
+  console.log(
+    getCannonMoves(
+      initialPieces[5],
       initialPieces
     )
-  );*/
+  );
 
   function handlePointClick(position:number) {
     if (!selectedPiece) return;

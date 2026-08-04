@@ -7,7 +7,7 @@ export function getSoldierMoves(piece: Piece, pieces: Piece[]): number[] {
   const moves: number[] = [];
   const { row, col } = positionToRowCol(piece.position);
   const forward = piece.side === "red" ? -1 : 1;
-  const destinations = [[forward, 0]];
+  const destinations: [number, number][] = [[forward, 0]];
 
   if (isAcrossRiver(piece.side, row)) {
     destinations.push([0, -1])
