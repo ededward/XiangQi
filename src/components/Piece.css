@@ -21,6 +21,8 @@
   font-size: 28px;
   font-weight: bold;
 
+  cursor: default;
+
   z-index: 10;
 }
 

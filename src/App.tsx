@@ -10,12 +10,21 @@ function App() {
   const [selectedPiece, setSelectedPiece] = useState<Piece | null>(null);
   const legalMoves = selectedPiece ? getLegalMoves(selectedPiece, pieces) : [];
 
-  function handlePointClick(position:number) {
+  function handlePointClick(position: number) {
     if (!selectedPiece) return;
+
+    if (!legalMoves.includes(position)) return;
+
+    const remainingPieces = pieces.filter(piece => piece.position !== position);
+    const updatedPieces = remainingPieces.map(piece => {
+      if (piece.position === selectedPiece.position) {
+        return { ...piece, position };
+      }
+      return piece;
+    });
     
-    console.log(
-      `${selectedPiece.side} ${selectedPiece.type} → ${position}`
-    );
+    setPieces(updatedPieces);
+    setSelectedPiece(null);
   }
 
   function handlePieceClick(piece: Piece) {
